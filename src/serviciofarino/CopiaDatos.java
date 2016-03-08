@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package serviciofarino;
 
+import XLSProcess.FileXLS_Process;
 import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -42,9 +38,9 @@ public class CopiaDatos {
             @Override
             public void run() {
 
-                //FindTxt ftxt = new FindTxt();
+                FileXLS_Process excel = new FileXLS_Process();
                 System.out.println("Inicio de Copia farino");
-                //ftxt.findFile();
+                excel.findFile();
             }
         };
         tiempo_notificacion.schedule(copiar_archivos, getTimeExecute().getTime(), tiempo_trabajo * 60 * 1000);
